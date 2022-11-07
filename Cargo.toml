@@ -20,4 +20,3 @@ default = []
 bindgen = "^0.61"
 cc = "^1.0"
 pkg-config = "^0.3"
-
