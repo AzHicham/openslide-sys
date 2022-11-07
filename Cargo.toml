@@ -1,0 +1,23 @@
+[package]
+name = "openslide-sys"
+edition = "2021"
+version = "0.1.0"
+authors = ["AzHicham <hicham.azimani1@gmail.com>"]
+description = "Low-level bindings to the openslide library"
+repository = "https://github.com/AzHicham/openslide-sys"
+homepage = "https://github.com/AzHicham/openslide-sys"
+readme = "README.md"
+keywords = ["FFI", "FFI bindgen", "openslide"]
+categories = ["External FFI bindings"]
+license = "MIT/Apache-2.0"
+
+[features]
+default = []
+
+[dependencies]
+
+[build-dependencies]
+bindgen = "^0.61"
+cc = "^1.0"
+pkg-config = "^0.3"
+
