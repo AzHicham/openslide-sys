@@ -70,6 +70,7 @@ fn main() {
         .file("src/openslide-sys/openslide.c")
         .flag_if_supported("-Wno-deprecated")
         .flag_if_supported("-Wno-#pragma-messages")
+        .flag_if_supported("-Wno-deprecated-declarations")
         .compile("libopenslide.a");
 
     link_library("gdk-pixbuf-2.0");
