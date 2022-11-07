@@ -68,9 +68,7 @@ fn main() {
         .file("src/openslide-sys/openslide-vendor-trestle.c")
         .file("src/openslide-sys/openslide-vendor-ventana.c")
         .file("src/openslide-sys/openslide.c")
-        .flag_if_supported("-Wno-deprecated")
-        .flag_if_supported("-Wno-#pragma-messages")
-        .flag_if_supported("-Wno-deprecated-declarations")
+        .define("GLIB_DISABLE_DEPRECATION_WARNINGS", None)
         .compile("libopenslide.a");
 
     link_library("gdk-pixbuf-2.0");
