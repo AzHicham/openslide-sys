@@ -17,6 +17,6 @@ default = []
 [dependencies]
 
 [build-dependencies]
-bindgen = "^0.61"
+bindgen = "^0.62"
 cc = "^1.0"
 pkg-config = "^0.3"
