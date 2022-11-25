@@ -13,13 +13,15 @@ fn statik_link() -> bool {
 fn probe(s: &str) -> pkg_config::Library {
     pkg_config::Config::new()
         .cargo_metadata(false)
-        .statik(statik_link())
         .probe(s)
         .unwrap()
 }
 
 fn link_library(s: &str) {
-    pkg_config::Config::new().statik(true).probe(s).unwrap();
+    pkg_config::Config::new()
+        .statik(statik_link())
+        .probe(s)
+        .unwrap();
 }
 
 fn main() {
