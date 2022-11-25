@@ -1,5 +1,16 @@
 use std::{env, path::Path};
 
+#[cfg(target_os = "linux")]
+fn statik_build() -> bool {
+    true
+}
+
+// Temporary fix build under macos
+#[cfg(target_os = "macos")]
+fn statik_build() -> bool {
+    false
+}
+
 fn probe(s: &str) -> pkg_config::Library {
     pkg_config::Config::new()
         .cargo_metadata(false)
@@ -8,7 +19,10 @@ fn probe(s: &str) -> pkg_config::Library {
 }
 
 fn link_library(s: &str) {
-    pkg_config::Config::new().statik(true).probe(s).unwrap();
+    pkg_config::Config::new()
+        .statik(statik_build())
+        .probe(s)
+        .unwrap();
 }
 
 fn main() {
