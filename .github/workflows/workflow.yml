@@ -37,7 +37,7 @@ jobs:
     - name: Build & Test
       run: cargo test --features ${{ matrix.feature }}
     - name: Build only (macosx & statik link)
-      if: ${{ matrix.feature == "default" && matrix.os == 'macos-12' }}
+      if: ${{ matrix.feature == 'default' && matrix.os == 'macos-12' }}
       run: cargo build --features ${{ matrix.feature }}
 
   doc-rs:
