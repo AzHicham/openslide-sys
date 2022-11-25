@@ -14,10 +14,11 @@ build = "build.rs"
 
 [features]
 default = []
+dynamic-link = []
 
 [dependencies]
 
 [build-dependencies]
-bindgen = "^0.62"
-cc = "^1.0"
-pkg-config = "^0.3"
+bindgen = "0.63.0"
+cc = "1.0.77"
+pkg-config = "0.3.26"

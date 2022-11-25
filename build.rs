@@ -1,28 +1,21 @@
 use std::{env, path::Path};
 
-#[cfg(target_os = "linux")]
-fn statik_build() -> bool {
-    true
+#[cfg(feature = "dynamic-link")]
+fn statik_link() -> bool {
+    false
 }
 
-// Temporary fix build under macos
-#[cfg(target_os = "macos")]
-fn statik_build() -> bool {
-    false
+#[cfg(not(feature = "dynamic-link"))]
+fn statik_link() -> bool {
+    true
 }
 
 fn probe(s: &str) -> pkg_config::Library {
     pkg_config::Config::new()
-        .cargo_metadata(false)
+        .cargo_metadata(true)
+        .statik(statik_link())
         .probe(s)
         .unwrap()
-}
-
-fn link_library(s: &str) {
-    pkg_config::Config::new()
-        .statik(statik_build())
-        .probe(s)
-        .unwrap();
 }
 
 fn main() {
@@ -85,16 +78,5 @@ fn main() {
             .file("src/openslide-sys/openslide.c")
             .define("GLIB_DISABLE_DEPRECATION_WARNINGS", None)
             .compile("libopenslide.a");
-
-        link_library("gdk-pixbuf-2.0");
-        link_library("cairo");
-        link_library("libopenjp2");
-        link_library("libxml-2.0");
-        link_library("libpng16");
-        link_library("libtiff-4");
-        link_library("libjpeg");
-        link_library("sqlite3");
-        link_library("gio-2.0");
-        link_library("glib-2.0");
     }
 }
