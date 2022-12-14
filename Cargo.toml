@@ -1,7 +1,7 @@
 [package]
 name = "openslide-sys"
 edition = "2021"
-version = "0.1.1"
+version = "0.1.2"
 authors = ["AzHicham <hicham.azimani1@gmail.com>"]
 description = "Low-level bindings to the openslide library"
 repository = "https://github.com/AzHicham/openslide-sys"
@@ -19,6 +19,6 @@ dynamic-link = []
 [dependencies]
 
 [build-dependencies]
-bindgen = "0.63.0"
-cc = "1.0.77"
-pkg-config = "0.3.26"
+bindgen = "0.63"
+cc = "1.0"
+pkg-config = "0.3"
