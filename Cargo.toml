@@ -19,6 +19,6 @@ dynamic-link = []
 [dependencies]
 
 [build-dependencies]
-bindgen = "0.63"
+bindgen = "0.64"
 cc = "1.0"
 pkg-config = "0.3"
