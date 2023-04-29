@@ -5,4 +5,4 @@ install-deps-brew:
 
 install-deps-apt:
 	sudo apt-get update
-	sudo apt-get install -y --no-install-recommends libopenslide0
+	sudo apt-get install -y --no-install-recommends libopenslide-dev
