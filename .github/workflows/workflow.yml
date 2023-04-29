@@ -47,6 +47,8 @@ jobs:
         toolchain: stable
         override: true
         components: clippy, rustfmt
+    - name: Install dependencies ubuntu
+      run: make install-deps-apt
     - name: Generate Doc
       env:
         DOCS_RS: 1
