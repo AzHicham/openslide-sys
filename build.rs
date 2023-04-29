@@ -10,9 +10,10 @@ fn probe(s: &str) -> pkg_config::Library {
 fn main() {
     let libopenslide = probe("openslide");
 
-    let Some(include_dir) = libopenslide.include_paths.get(0) else {
-            panic!("Could not find include path for openslide")
-        };
+    let include_dir = libopenslide
+        .include_paths
+        .get(0)
+        .expect("Could not find include path for openslide");
 
     let bindings = bindgen::Builder::default()
         .header(include_dir.join("openslide.h").to_string_lossy())
