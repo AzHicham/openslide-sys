@@ -3,6 +3,10 @@ on:
   release:
     types: [published]
 
+env:
+  CARGO_TERM_COLOR: always
+  RUST_VERSION: 1.68.2
+
 jobs:
   validate:
     runs-on: ubuntu-20.04
@@ -25,10 +29,10 @@ jobs:
     needs: [validate]
     steps:
       - uses: actions/checkout@v3
-      - uses: actions-rs/toolchain@v1
+      - uses: dtolnay/rust-toolchain@stable
         with:
-          toolchain: stable
-          override: true
+          toolchain: ${{ env.RUST_VERSION }}
+          components: clippy, rustfmt
       - name: Install dependencies
         run: make install-deps-apt
       - uses: katyo/publish-crates@v2
