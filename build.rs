@@ -1,5 +1,15 @@
 use std::{env, path::Path};
 
+#[cfg(feature = "dynamic-link")]
+fn statik_link() -> bool {
+    false
+}
+
+#[cfg(not(feature = "dynamic-link"))]
+fn statik_link() -> bool {
+    true
+}
+
 fn probe(s: &str) -> pkg_config::Library {
     pkg_config::Config::new()
         .cargo_metadata(false)
@@ -7,8 +17,17 @@ fn probe(s: &str) -> pkg_config::Library {
         .unwrap()
 }
 
+fn link_library(s: &str) {
+    pkg_config::Config::new()
+        .statik(statik_link())
+        .probe(s)
+        .unwrap();
+}
+
+const LIB_OPENSLIDE: &str = "openslide";
+
 fn main() {
-    let libopenslide = probe("openslide");
+    let libopenslide = probe(LIB_OPENSLIDE);
 
     let include_dir = libopenslide
         .include_paths
@@ -30,4 +49,6 @@ fn main() {
     bindings
         .write_to_file(dest_path)
         .expect("Couldn't write bindings!");
+
+    link_library(LIB_OPENSLIDE);
 }
