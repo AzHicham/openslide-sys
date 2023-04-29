@@ -8,27 +8,25 @@ fn probe(s: &str) -> pkg_config::Library {
 }
 
 fn main() {
-    if env::var("DOCS_RS").is_err() {
-        let libopenslide = probe("openslide");
+    let libopenslide = probe("openslide");
 
-        let Some(include_dir) = libopenslide.include_paths.get(0) else {
+    let Some(include_dir) = libopenslide.include_paths.get(0) else {
             panic!("Could not find include path for openslide")
         };
 
-        let bindings = bindgen::Builder::default()
-            .header(include_dir.join("openslide.h").to_string_lossy())
-            // Tell cargo to invalidate the built crate whenever any of the
-            // included header files changed.
-            .parse_callbacks(Box::new(bindgen::CargoCallbacks))
-            // Finish the builder and generate the bindings.
-            .generate()
-            // Unwrap the Result and panic on failure.
-            .expect("Unable to generate bindings");
+    let bindings = bindgen::Builder::default()
+        .header(include_dir.join("openslide.h").to_string_lossy())
+        // Tell cargo to invalidate the built crate whenever any of the
+        // included header files changed.
+        .parse_callbacks(Box::new(bindgen::CargoCallbacks))
+        // Finish the builder and generate the bindings.
+        .generate()
+        // Unwrap the Result and panic on failure.
+        .expect("Unable to generate bindings");
 
-        let out_dir = env::var_os("OUT_DIR").unwrap();
-        let dest_path = Path::new(&out_dir).join("bindings.rs");
-        bindings
-            .write_to_file(dest_path)
-            .expect("Couldn't write bindings!");
-    }
+    let out_dir = env::var_os("OUT_DIR").expect("Var env OUT_DIR is undefined");
+    let dest_path = Path::new(&out_dir).join("bindings.rs");
+    bindings
+        .write_to_file(dest_path)
+        .expect("Couldn't write bindings!");
 }
