@@ -9,7 +9,7 @@ fn probe(s: &str) -> pkg_config::Library {
 
 fn main() {
     if env::var("DOCS_RS").is_err() {
-        let libopenslide = probe("openslide"); // include_paths
+        let libopenslide = probe("openslide");
 
         let Some(include_dir) = libopenslide.include_paths.get(0) else {
             panic!("Could not find include path for openslide")
