@@ -19,8 +19,11 @@ jobs:
         matrix:
           os: [ "ubuntu-latest", "ubuntu-20.04", "macos-12" ]
 
+    env:
+      SYSTEM: ${{ contains(matrix.os, 'ubuntu') && 'ubuntu' || 'macos' }}
+
     steps:
-    - uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # v4
+    - uses: actions/checkout@v4
     - uses: dtolnay/rust-toolchain@stable
       with:
         toolchain: ${{ env.RUST_VERSION }}
@@ -28,27 +31,23 @@ jobs:
     - uses: Swatinem/rust-cache@v2
       with:
         key: ${{ matrix.os }}
-    - name: Install dependencies ubuntu
-      if: ${{ matrix.os == 'ubuntu-20.04' || matrix.os == 'ubuntu-latest' }}
-      run: make install-deps-apt
-    - name: Install dependencies macos
-      if: ${{ matrix.os == 'macos-12' }}
-      run: make install-deps-brew
+    - name: Install dependencies
+      run: make install-deps-${{ env.SYSTEM }}
     - name: Build & Test (Debug)
-      run: cargo test
+      run: make test-debug-${{ env.SYSTEM }}
     - name: Build & Test (Release)
-      run: cargo test --release
+      run: make test-release-${{ env.SYSTEM }}
 
   doc-rs:
     runs-on: ubuntu-22.04
     steps:
-    - uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # v4
+    - uses: actions/checkout@v4
     - uses: dtolnay/rust-toolchain@stable
       with:
         toolchain: ${{ env.RUST_VERSION }}
         components: clippy, rustfmt
     - name: Install dependencies ubuntu
-      run: make install-deps-apt
+      run: make install-deps-ubuntu
     - name: Generate Doc
       env:
         DOCS_RS: 1
@@ -57,14 +56,14 @@ jobs:
   pre-commit:
     runs-on: ubuntu-22.04
     steps:
-    - uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # v4
+    - uses: actions/checkout@v4
     - uses: dtolnay/rust-toolchain@stable
       with:
         toolchain: ${{ env.RUST_VERSION }}
         components: clippy, rustfmt
     - uses: actions/setup-python@v5
       with:
-        python-version: '3.9'
+        python-version: '3.12'
     - name: Install pre-commit
       run: pip install pre-commit
     - name: Pre-commit
