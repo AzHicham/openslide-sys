@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/AzHicham/openslide-sys/compare/1.0.2...1.0.3) (2023-12-09)
+
+
+### Bug Fixes
+
+* Publish workflow & semantic release config ([#53](https://github.com/AzHicham/openslide-sys/issues/53)) ([30070a5](https://github.com/AzHicham/openslide-sys/commit/30070a5e5a1590f236a15d1d2b91466d6f7e04e1))
+
 ## [1.0.2](https://github.com/AzHicham/openslide-sys/compare/1.0.1...1.0.2) (2023-12-09)
 
 
