@@ -18,10 +18,13 @@ jobs:
     strategy:
         fail-fast: false
         matrix:
-          os: [ "ubuntu-latest", "ubuntu-20.04", "macos-12" ]
+          os: [ "ubuntu-22.04", "macos-12" ]
+          openslide_version: [ "openslide3", "openslide4" ]
 
     env:
-      SYSTEM: ${{ contains(matrix.os, 'ubuntu') && 'ubuntu' || 'macos' }}
+      INSTALL_DEPS_CMD: install-deps-${{ contains(matrix.os, 'ubuntu') && 'ubuntu' || 'macos' }}-${{ matrix.openslide_version }}
+      TEST_DEBUG_CMD: test-debug-${{ contains(matrix.os, 'ubuntu') && 'ubuntu' || 'macos' }}
+      TEST_RELEASE_CMD: test-release-${{ contains(matrix.os, 'ubuntu') && 'ubuntu' || 'macos' }}
 
     steps:
     - uses: actions/checkout@v4
@@ -33,11 +36,11 @@ jobs:
       with:
         key: ${{ matrix.os }}
     - name: Install dependencies
-      run: make install-deps-${{ env.SYSTEM }}
+      run: make ${{ env.INSTALL_DEPS_CMD }}
     - name: Build & Test (Debug)
-      run: make test-debug-${{ env.SYSTEM }}
+      run: make ${{ env.TEST_DEBUG_CMD }}
     - name: Build & Test (Release)
-      run: make test-release-${{ env.SYSTEM }}
+      run: make ${{ env.TEST_RELEASE_CMD }}
 
   doc-rs:
     runs-on: ubuntu-22.04
@@ -48,7 +51,7 @@ jobs:
         toolchain: ${{ env.RUST_VERSION }}
         components: clippy, rustfmt
     - name: Install dependencies ubuntu
-      run: make install-deps-ubuntu
+      run: make install-deps-ubuntu-openslide3
     - name: Generate Doc
       env:
         DOCS_RS: 1
