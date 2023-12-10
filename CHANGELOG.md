@@ -1,3 +1,15 @@
+## [1.0.4](https://github.com/AzHicham/openslide-sys/compare/1.0.3...1.0.4) (2023-12-10)
+
+
+### CI/CD
+
+* Enable renovate pre-commit ([#54](https://github.com/AzHicham/openslide-sys/issues/54)) ([d1fc759](https://github.com/AzHicham/openslide-sys/commit/d1fc75905b5552d51b33fac57cefe4b876c7b42d))
+
+
+### Miscellaneous Chores
+
+* **deps:** update pre-commit ([#55](https://github.com/AzHicham/openslide-sys/issues/55)) ([f010788](https://github.com/AzHicham/openslide-sys/commit/f010788790effed092682975b362ef2955ef2641))
+
 ## [1.0.3](https://github.com/AzHicham/openslide-sys/compare/1.0.2...1.0.3) (2023-12-09)
 
 
