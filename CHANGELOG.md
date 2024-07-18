@@ -1,3 +1,27 @@
+## [1.0.6](https://github.com/AzHicham/openslide-sys/compare/1.0.5...1.0.6) (2024-07-18)
+
+
+### CI/CD
+
+* fix build macos ([#68](https://github.com/AzHicham/openslide-sys/issues/68)) ([ea272e0](https://github.com/AzHicham/openslide-sys/commit/ea272e099e91487177da641a0ff97418c0ebb7d4))
+
+
+### Miscellaneous Chores
+
+* **deps:** update cargo ([#74](https://github.com/AzHicham/openslide-sys/issues/74)) ([1d4f5e4](https://github.com/AzHicham/openslide-sys/commit/1d4f5e4affe967b83c5081658a7d7d9dc39edc9e))
+* **deps:** update pre-commit ([#63](https://github.com/AzHicham/openslide-sys/issues/63)) ([6c18cc3](https://github.com/AzHicham/openslide-sys/commit/6c18cc313b642aee934f0b65d1220962dec55bb6))
+* **deps:** update pre-commit ([#69](https://github.com/AzHicham/openslide-sys/issues/69)) ([4cb4720](https://github.com/AzHicham/openslide-sys/commit/4cb4720ce8a856e04b1ad2380bc2390c9d1e7f46))
+* **deps:** update pre-commit ([#70](https://github.com/AzHicham/openslide-sys/issues/70)) ([58957aa](https://github.com/AzHicham/openslide-sys/commit/58957aa833c3492c9160137b7b4a44a37df742c1))
+* **deps:** update pre-commit ([#75](https://github.com/AzHicham/openslide-sys/issues/75)) ([d4445de](https://github.com/AzHicham/openslide-sys/commit/d4445de321527e5abe25a7afe94d67b735441714))
+* **deps:** update pre-commit hook renovatebot/pre-commit-hooks to v37.198.1 ([#64](https://github.com/AzHicham/openslide-sys/issues/64)) ([317eed5](https://github.com/AzHicham/openslide-sys/commit/317eed58214bedac4199c7e35cee1b0b3b8ae061))
+* **deps:** update pre-commit hook renovatebot/pre-commit-hooks to v37.227.1 ([#65](https://github.com/AzHicham/openslide-sys/issues/65)) ([a1cbdcb](https://github.com/AzHicham/openslide-sys/commit/a1cbdcb5b1b865682abb5a22c06155fc9c635a9b))
+* **deps:** update pre-commit hook renovatebot/pre-commit-hooks to v37.236.0 ([#66](https://github.com/AzHicham/openslide-sys/issues/66)) ([a474a6f](https://github.com/AzHicham/openslide-sys/commit/a474a6fa578979380ba7f94d1b4d6376343cece3))
+* **deps:** update pre-commit hook renovatebot/pre-commit-hooks to v37.252.0 ([#67](https://github.com/AzHicham/openslide-sys/issues/67)) ([60fb28b](https://github.com/AzHicham/openslide-sys/commit/60fb28ba6334a3c3b0d34ad7465dd9c52ca2af44))
+* **deps:** update pre-commit hook renovatebot/pre-commit-hooks to v37.300.1 ([#71](https://github.com/AzHicham/openslide-sys/issues/71)) ([de7af2d](https://github.com/AzHicham/openslide-sys/commit/de7af2d41cf150435d6a4e68b804b4b7c2b6d0af))
+* **deps:** update pre-commit hook renovatebot/pre-commit-hooks to v37.319.1 ([#72](https://github.com/AzHicham/openslide-sys/issues/72)) ([db01313](https://github.com/AzHicham/openslide-sys/commit/db01313f0f2497e54adf9d8eda6a529ad6fc5f79))
+* **deps:** update pre-commit hook renovatebot/pre-commit-hooks to v37.333.0 ([#73](https://github.com/AzHicham/openslide-sys/issues/73)) ([77d553c](https://github.com/AzHicham/openslide-sys/commit/77d553c8d49615e69bb7223b9435c470b0ffa547))
+* **deps:** update pre-commit hook renovatebot/pre-commit-hooks to v37.410.3 ([#76](https://github.com/AzHicham/openslide-sys/issues/76)) ([eca2ed4](https://github.com/AzHicham/openslide-sys/commit/eca2ed47c404ea9c7ee362d1511087f9055e784a))
+
 ## [1.0.5](https://github.com/AzHicham/openslide-sys/compare/1.0.4...1.0.5) (2024-01-24)
 
 
