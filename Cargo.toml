@@ -11,6 +11,7 @@ keywords = ["FFI", "bindings", "openslide"]
 categories = ["external-ffi-bindings"]
 license = "MIT/Apache-2.0"
 build = "build.rs"
+rust-version = "1.77.0"
 
 [features]
 default = []
@@ -19,5 +20,5 @@ dynamic-link = []
 [dependencies]
 
 [build-dependencies]
-bindgen = "0.69"
+bindgen = "0.70"
 pkg-config = "0.3"
