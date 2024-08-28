@@ -1,3 +1,22 @@
+## [1.0.7](https://github.com/AzHicham/openslide-sys/compare/1.0.6...1.0.7) (2024-08-28)
+
+
+### Bug Fixes
+
+* update bindgen to 0.70 ([#82](https://github.com/AzHicham/openslide-sys/issues/82)) ([0894746](https://github.com/AzHicham/openslide-sys/commit/089474670fc8456f3c91066b7fd1a235967a825c))
+
+
+### CI/CD
+
+* fix Makefile for macOs ([#79](https://github.com/AzHicham/openslide-sys/issues/79)) ([027b1e2](https://github.com/AzHicham/openslide-sys/commit/027b1e23e472042b0c72df91e62abc448fbfdb6e))
+
+
+### Miscellaneous Chores
+
+* **deps:** update pre-commit ([#77](https://github.com/AzHicham/openslide-sys/issues/77)) ([d5a9837](https://github.com/AzHicham/openslide-sys/commit/d5a983774386f062f6539e87b852a1cb180f517f))
+* **deps:** update pre-commit hook renovatebot/pre-commit-hooks to v38 ([#78](https://github.com/AzHicham/openslide-sys/issues/78)) ([8ac464b](https://github.com/AzHicham/openslide-sys/commit/8ac464b451edb0d838dcac6b43cf3fdf04169919))
+* **deps:** update pre-commit hook renovatebot/pre-commit-hooks to v38.56.1 ([#80](https://github.com/AzHicham/openslide-sys/issues/80)) ([9b15b98](https://github.com/AzHicham/openslide-sys/commit/9b15b982b520c7fb18718444edba2a9d98b03e29))
+
 ## [1.0.6](https://github.com/AzHicham/openslide-sys/compare/1.0.5...1.0.6) (2024-07-18)
 
 
