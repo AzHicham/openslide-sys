@@ -43,7 +43,7 @@ jobs:
       run: make ${{ env.TEST_RELEASE_CMD }}
 
   doc-rs:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
     - uses: actions/checkout@v4
     - uses: dtolnay/rust-toolchain@stable
@@ -58,7 +58,7 @@ jobs:
       run: cargo doc -v
 
   pre-commit:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
     - uses: actions/checkout@v4
     - uses: dtolnay/rust-toolchain@stable
