@@ -20,5 +20,5 @@ dynamic-link = []
 [dependencies]
 
 [build-dependencies]
-bindgen = "0.71"
+bindgen = "0.72"
 pkg-config = "0.3"
