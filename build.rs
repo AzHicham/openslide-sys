@@ -1,38 +1,19 @@
 use std::{env, path::Path};
 
-#[cfg(feature = "dynamic-link")]
-fn statik_link() -> bool {
-    false
-}
-
-#[cfg(not(feature = "dynamic-link"))]
-fn statik_link() -> bool {
-    true
-}
-
-fn probe(s: &str) -> pkg_config::Library {
-    pkg_config::Config::new()
-        .cargo_metadata(false)
-        .probe(s)
-        .unwrap()
-}
-
-fn link_library(s: &str) {
-    pkg_config::Config::new()
-        .statik(statik_link())
-        .probe(s)
-        .unwrap();
-}
-
 const LIB_OPENSLIDE: &str = "openslide";
 
 fn main() {
-    let libopenslide = probe(LIB_OPENSLIDE);
+    let dynamic_link = cfg!(feature = "dynamic-link");
 
-    let include_dir = libopenslide
+    let library = pkg_config::Config::new()
+        .statik(!dynamic_link)
+        .probe(LIB_OPENSLIDE)
+        .unwrap_or_else(|err| panic!("failed to find {LIB_OPENSLIDE} via pkg-config: {err}"));
+
+    let include_dir = library
         .include_paths
-        .get(0)
-        .expect("Could not find include path for openslide");
+        .first()
+        .expect("pkg-config returned no include path for openslide");
 
     let bindings = bindgen::Builder::default()
         .header(include_dir.join("openslide.h").to_string_lossy())
@@ -49,6 +30,4 @@ fn main() {
     bindings
         .write_to_file(dest_path)
         .expect("Couldn't write bindings!");
-
-    link_library(LIB_OPENSLIDE);
 }
