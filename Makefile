@@ -5,6 +5,8 @@ CARGO_BIN = ${CARGO_HOME}/bin/cargo
 
 install-deps-macos-openslide3:
 	brew update
+	# runner image ships openssl@1.1 linked at bin/openssl, which blocks linking openssl@3
+	brew unlink openssl@1.1 || true
 	curl https://raw.githubusercontent.com/Homebrew/homebrew-core/e6e41a54ec4d05000c1b95e515c85adb6f8f35af/Formula/o/openslide.rb > openslide.rb
 	brew tap-new AzHicham/openslide
 	cp openslide.rb /opt/homebrew/Library/Taps/azhicham/homebrew-openslide/Formula/
@@ -12,6 +14,7 @@ install-deps-macos-openslide3:
 
 install-deps-macos-openslide4:
 	brew update
+	brew unlink openssl@1.1 || true
 	brew install openslide
 
 install-deps-ubuntu-openslide3:
