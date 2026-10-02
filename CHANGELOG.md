@@ -1,3 +1,53 @@
+## [1.0.9](https://github.com/AzHicham/openslide-sys/compare/1.0.8...1.0.9) (2026-10-02)
+
+
+### Bug Fixes
+
+* improve build.rs ([df2a566](https://github.com/AzHicham/openslide-sys/commit/df2a566271326279b269998229898fd133ea5755))
+
+
+### Reverts
+
+* Revert "ci: unlink openssl@1.1 before brew install on macOS" ([092b7fe](https://github.com/AzHicham/openslide-sys/commit/092b7fe872964695ca79eea0ff1645ab4f604bd9))
+
+
+### CI/CD
+
+* drop openslide3 build on macOS ([1fee8f3](https://github.com/AzHicham/openslide-sys/commit/1fee8f300dc2ae010bfd1d651b2bd239a16e1138))
+* run macOS jobs on macos-26 ([9a08494](https://github.com/AzHicham/openslide-sys/commit/9a08494078c55a0f48fbf4d96ed33a5ea4ff5d08))
+* unlink openssl@1.1 before brew install on macOS ([6eab3cf](https://github.com/AzHicham/openslide-sys/commit/6eab3cffb2088b32145249fb5777169856b7b84c))
+* update audit workflow ([1e0ea3f](https://github.com/AzHicham/openslide-sys/commit/1e0ea3f5630d17968fff8a99e5e5ebe0811d64af))
+
+
+### Miscellaneous Chores
+
+* **deps:** update actions/checkout action to v5 ([d686895](https://github.com/AzHicham/openslide-sys/commit/d68689533526c2cee1af5bb4314db3045c048b0c))
+* **deps:** update actions/checkout action to v6 ([b397183](https://github.com/AzHicham/openslide-sys/commit/b3971839a85724636cde3ca606f89496a6c384f1))
+* **deps:** update actions/checkout action to v7 ([4d0ebaf](https://github.com/AzHicham/openslide-sys/commit/4d0ebaf4105caa24b2e6e983fd6450a918841378))
+* **deps:** update actions/setup-python action to v6 ([2752f07](https://github.com/AzHicham/openslide-sys/commit/2752f07b82bf0c271eba2b1d4c388d51a603710f))
+* **deps:** update actions/setup-python action to v7 ([381c239](https://github.com/AzHicham/openslide-sys/commit/381c2398213884865ac869d59c3ae6b07a79d980))
+* **deps:** update cycjimmy/semantic-release-action action to v6 ([8ad5081](https://github.com/AzHicham/openslide-sys/commit/8ad5081a46acb20c65bc751065c1b834a96d6414))
+* **deps:** update dependency python to 3.14 ([6fe54c7](https://github.com/AzHicham/openslide-sys/commit/6fe54c7a2beee2e705cba15f27d2f9c1c81865c9))
+* **deps:** update pre-commit ([15307b7](https://github.com/AzHicham/openslide-sys/commit/15307b7092290773997831ef9b8df0d4a6192ffa))
+* **deps:** update pre-commit ([77f207e](https://github.com/AzHicham/openslide-sys/commit/77f207ec1c59f3336a228e2776da6dfe91a73b8e))
+* **deps:** update pre-commit ([5a981e9](https://github.com/AzHicham/openslide-sys/commit/5a981e9dc5dd7d3490a14f795795c59d6836e968))
+* **deps:** update pre-commit hook pre-commit/pre-commit to v4.3.0 ([1ba1fca](https://github.com/AzHicham/openslide-sys/commit/1ba1fcad5ef18cafa5df4fb62cf5db8c6220fce7))
+* **deps:** update pre-commit hook pre-commit/pre-commit to v4.4.0 ([35c551d](https://github.com/AzHicham/openslide-sys/commit/35c551db58534dc4cd2acd588421e33fef83267c))
+* **deps:** update pre-commit hook pre-commit/pre-commit to v4.6.2 ([7ca96d1](https://github.com/AzHicham/openslide-sys/commit/7ca96d1168eb7e66b7171252eaf8a421b6de0ec3))
+* **deps:** update pre-commit hook pre-commit/pre-commit-hooks to v6 ([889db58](https://github.com/AzHicham/openslide-sys/commit/889db58f06f192deef7c844cee7cf6ed240b3dc8))
+* **deps:** update pre-commit hook renovatebot/pre-commit-hooks to v41 ([f2a7cf5](https://github.com/AzHicham/openslide-sys/commit/f2a7cf5c0df31ae3e096a86aaaab63cd9ae323b5))
+* **deps:** update pre-commit hook renovatebot/pre-commit-hooks to v41.155.1 ([3570c44](https://github.com/AzHicham/openslide-sys/commit/3570c443b061b26c53f984dd60eb69b3a1eb6bcc))
+* **deps:** update pre-commit hook renovatebot/pre-commit-hooks to v42 ([7e95896](https://github.com/AzHicham/openslide-sys/commit/7e958964a173fe595ac1b1f30cd4a2398f1d61f2))
+* **deps:** update pre-commit hook renovatebot/pre-commit-hooks to v43 ([e4ffe97](https://github.com/AzHicham/openslide-sys/commit/e4ffe972c1c0f0ae2fe0a888de3009cd5ded626b))
+* **deps:** update pre-commit hook renovatebot/pre-commit-hooks to v43.252.0 ([9c02cf4](https://github.com/AzHicham/openslide-sys/commit/9c02cf41639cb364f71dab1474a80b2df534d64f))
+* **deps:** update pre-commit hook renovatebot/pre-commit-hooks to v43.252.1 ([5623d91](https://github.com/AzHicham/openslide-sys/commit/5623d91551ffd4224c787199141a3492cefd7e0a))
+* **deps:** update pre-commit hook renovatebot/pre-commit-hooks to v44 ([4a9c53a](https://github.com/AzHicham/openslide-sys/commit/4a9c53af64fbc4b69b83b3390348c7daa9dadb4d))
+* **deps:** update pre-commit hook renovatebot/pre-commit-hooks to v44.132.2 ([bd86120](https://github.com/AzHicham/openslide-sys/commit/bd861203af012f1a2eba8589c063fff9e23684fc))
+* **deps:** update rust crate bindgen to v0.72.1 ([399bcd6](https://github.com/AzHicham/openslide-sys/commit/399bcd6b0e62461e07573d74269a7f4b76ecca5a))
+* **deps:** update rust crate pkg-config to v0.3.33 ([ddb084c](https://github.com/AzHicham/openslide-sys/commit/ddb084c5b6bae8e868f8f4af052f77a4a9ca5706))
+* **deps:** update rust crate pkg-config to v0.3.34 ([40a33cf](https://github.com/AzHicham/openslide-sys/commit/40a33cfd425f6087f800773b92ab3a822ca360b6))
+* simplify deps ([bc5c55d](https://github.com/AzHicham/openslide-sys/commit/bc5c55d31b37b4a770d46c69fc43e69f0a804b2f))
+
 ## [1.0.8](https://github.com/AzHicham/openslide-sys/compare/1.0.7...1.0.8) (2025-08-21)
 
 
