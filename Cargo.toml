@@ -21,7 +21,7 @@ dynamic-link = []
 
 [build-dependencies]
 [build-dependencies.bindgen]
-version = "0.72"
+version = "0.73"
 default-features = false
 features = ["runtime"]
 
